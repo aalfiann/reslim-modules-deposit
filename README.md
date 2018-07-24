@@ -1,6 +1,6 @@
 ### Detail module information
 
-1. Namespace >> **modules/crud_mod**
+1. Namespace >> **modules/deposit**
 2. Zip Archive source >> 
     https://github.com/aalfiann/reSlim-modules-deposit/archive/master.zip
 
