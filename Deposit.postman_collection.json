@@ -1,0 +1,749 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Deposit",
+		"_postman_id": "7433f439-701e-5946-cc02-09056e118a4c",
+		"description": "API Dcoumentation about Deposit Module.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Info Module",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/get/info/?apikey={yourapikey}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"get",
+						"info",
+						""
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{yourapikey}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get Info Module\n---\nGet info detail about Deposit Module."
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Install",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/install/{yourusername}/{yourtoken}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Install Deposit Database\n---\nThis will install Deposit Database.\n\nNote:\n- Only user with role Superuser who can install.\n- Your exist database will be replaced if you ever install this before."
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Uninstall",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/uninstall/{yourusername}/{yourtoken}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Uninstall Deposit Database\n---\nThis will remove Deposit Database.\n\nNote:\n- Only user with role Superuser who can uninstall.\n- Your exist deposit database will be removed clean."
+			},
+			"response": []
+		},
+		{
+			"name": "Generate ReferenceID",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/generate/referenceid/{yourusername}/{yourtoken}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Generate ReferenceID\n---\nThis will get the referenceid to be use in making a deposit transaction."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Debit",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/debit",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{yourusername}",
+							"description": "Length is 1-50 {alphanumeric,lowercase,required}",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "{yourtoken}",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "{depositid}",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "",
+							"description": "Length is 1-13 {double,money,required}",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Transaction Debit\n---\nThis will make a debit transaction. The total balance will go up.\n\nNote:\n- This work on all user, so make sure you have already create protection route access on frontend properly."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Credit",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/credit",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{yourusername}",
+							"description": "Length is 1-50 {alphanumeric,lowercase,required}",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "{yourtoken}",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "{depositid}",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "",
+							"description": "Length is 1-13 {double,money,required}",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Transaction Credit\n---\nThis will make a credit transaction. The total balance will go down.\n\nNote:\n- This work on all user, so make sure you have already create protection route access on frontend properly."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Topup",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/topup",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{yourusername}",
+							"description": "Length is 1-50 {alphanumeric,lowercase,required}",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "{yourtoken}",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "{depositid}",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "",
+							"description": "Length is 1-13 {double,money,required}",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Transaction Topup\n---\nThis will make a topup transaction. The total balance will go up.\n\nNote:\n- This work on all user, so make sure you have already create protection route access on frontend properly."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction New",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/new",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{yourusername}",
+							"description": "Length is 1-50 {alphanumeric,lowercase,required}",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "{yourtoken}",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Task",
+							"value": "{DB/CR}",
+							"description": "Length is 1-2 {required}",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "{depositid}",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "",
+							"description": "Length is 1-50 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "",
+							"description": "Length is 1-250 {required}",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "",
+							"description": "Length is 1-13 {double,money,required}",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Transaction New\n---\nThis will make a debit or credit transaction. The total balance will go up or go down.\n\nNote:\n- This work on all user, so make sure you have already create protection route access on frontend properly."
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance User",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/data/balance/{yourusername}/{yourtoken}",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Task",
+							"value": "DB",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "2018-05-24/TESTER/0021",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Test pengisian saldo deposit",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "50000",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Check Balance User\n---\nThis will get the total balance of user (self) deposit."
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance Admin",
+			"request": {
+				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/balance/{yourusername}/{yourtoken}/{depositid}",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Task",
+							"value": "DB",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "2018-05-24/TESTER/0021",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Test pengisian saldo deposit",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "50000",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Check Balance Admin\n---\nThis will get the total balance of user by depositid.\n\nNote:\n- Only user with role Superuser and Admin who can see balance of others."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Mutation User",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/data/mutation/{yourusername}/{yourtoken}/{page}/{itemsperpage}/?firstdate={yyyy-mm-dd}&lastdate={yyyy-mm-dd}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"data",
+						"mutation",
+						"{yourusername}",
+						"{yourtoken}",
+						"{page}",
+						"{itemsperpage}",
+						""
+					],
+					"query": [
+						{
+							"key": "firstdate",
+							"value": "{yyyy-mm-dd}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lastdate",
+							"value": "{yyyy-mm-dd}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Task",
+							"value": "DB",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "2018-05-24/TESTER/0021",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Test pengisian saldo deposit",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "50000",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Show Mutation User\n---\nThis will show all data mutation user (self) with pagination."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Mutation Admin",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/mutation/{yourusername}/{yourtoken}/{page}/{itemsperpage}/?firstdate={yyyy-mm-dd}&lastdate={yyyy-mm-dd}&query={query to search}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"admin",
+						"data",
+						"mutation",
+						"{yourusername}",
+						"{yourtoken}",
+						"{page}",
+						"{itemsperpage}",
+						""
+					],
+					"query": [
+						{
+							"key": "firstdate",
+							"value": "{yyyy-mm-dd}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lastdate",
+							"value": "{yyyy-mm-dd}",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "query",
+							"value": "{query to search}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Token",
+							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Task",
+							"value": "DB",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "DepositID",
+							"value": "reslim",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ReferenceID",
+							"value": "2018-05-24/TESTER/0021",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Test pengisian saldo deposit",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Mutation",
+							"value": "50000",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Show Mutation Admin\n---\nThis will show all data mutation user with pagination.\n\nNote:\n- Only user with role Superuser and Admin who can see the data mutation of others."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Balance Admin",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/balance/{yourusername}/{yourtoken}/{page}/{itemsperpage}/?query={query to search}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"admin",
+						"data",
+						"balance",
+						"{yourusername}",
+						"{yourtoken}",
+						"{page}",
+						"{itemsperpage}",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{query to search}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Show Balance Admin\n---\nThis will show all data total balance of user with pagination.\n\nNote:\n- Only user with role Superuser and Admin who can see all data balance of others."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Most Deposit",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/mostdeposit/{year}/{maxitems}/{yourusername}/{yourtoken}?lang=en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"admin",
+						"data",
+						"mostdeposit",
+						"{year}",
+						"{maxitems}",
+						"{yourusername}",
+						"{yourtoken}"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Show Most Deposit\n---\nThis will show the most user make deposit of the year.\n\nNote:\n- You can make list the most user make deposit start from 10-1000."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Most Transaction",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/mosttransaction/{year}/{maxitem}/{yourusername}/{yourtoken}?lang=en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"admin",
+						"data",
+						"mosttransaction",
+						"{year}",
+						"{maxitem}",
+						"{yourusername}",
+						"{yourtoken}"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Show Most Transaction\n---\nThis will show the most user make transaction of the year.\n\nNote:\n- You can make list the most user make transaction start from 10-1000."
+			},
+			"response": []
+		},
+		{
+			"name": "Show Most Rich",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/mostrich/{maxitem}/{yourusername}/{yourtoken}?lang=en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"reSlim",
+						"src",
+						"api",
+						"deposit",
+						"transaction",
+						"admin",
+						"data",
+						"mostrich",
+						"{maxitem}",
+						"{yourusername}",
+						"{yourtoken}"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Show Most Rich\n---\nThis will show the most user have much of total balance of the year.\n\nNote:\n- You can make list the most user have much of total balance start from 10-1000."
+			},
+			"response": []
+		}
+	]
+}
