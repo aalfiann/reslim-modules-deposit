@@ -174,7 +174,7 @@ use PDO;                                            //To connect with database
 		    	if ($stmt->execute()) {	
                 	if ($stmt->rowCount() > 0){
                         $r = true;
-                        Auth::writeCache('deposit-'.$newdepid.'-exists');
+                        Auth::writeCache('deposit-'.$newdepid.'-exists',null,86400);
         	        }          	   	
 	    		}
             }	 		
