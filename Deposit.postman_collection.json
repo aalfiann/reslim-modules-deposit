@@ -280,53 +280,7 @@
 				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/data/balance/{yourusername}/{yourtoken}",
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "Username",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Token",
-							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Task",
-							"value": "DB",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "DepositID",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "ReferenceID",
-							"value": "2018-05-24/TESTER/0021",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Description",
-							"value": "Test pengisian saldo deposit",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Mutation",
-							"value": "50000",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
+				"body": {},
 				"description": "Check Balance User\n---\nThis will get the total balance of user (self) deposit."
 			},
 			"response": []
@@ -337,53 +291,7 @@
 				"url": "http://localhost:1337/reSlim/src/api/deposit/transaction/admin/data/balance/{yourusername}/{yourtoken}/{depositid}",
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "Username",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Token",
-							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Task",
-							"value": "DB",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "DepositID",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "ReferenceID",
-							"value": "2018-05-24/TESTER/0021",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Description",
-							"value": "Test pengisian saldo deposit",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Mutation",
-							"value": "50000",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
+				"body": {},
 				"description": "Check Balance Admin\n---\nThis will get the total balance of user by depositid.\n\nNote:\n- Only user with role Superuser and Admin who can see balance of others."
 			},
 			"response": []
@@ -430,53 +338,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "Username",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Token",
-							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Task",
-							"value": "DB",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "DepositID",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "ReferenceID",
-							"value": "2018-05-24/TESTER/0021",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Description",
-							"value": "Test pengisian saldo deposit",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Mutation",
-							"value": "50000",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
+				"body": {},
 				"description": "Show Mutation User\n---\nThis will show all data mutation user (self) with pagination."
 			},
 			"response": []
@@ -530,53 +392,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "Username",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Token",
-							"value": "1oSPIt0BUgDy7owQMPOk0LqrbjsxS7eqXALtC",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Task",
-							"value": "DB",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "DepositID",
-							"value": "reslim",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "ReferenceID",
-							"value": "2018-05-24/TESTER/0021",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Description",
-							"value": "Test pengisian saldo deposit",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "Mutation",
-							"value": "50000",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
+				"body": {},
 				"description": "Show Mutation Admin\n---\nThis will show all data mutation user with pagination.\n\nNote:\n- Only user with role Superuser and Admin who can see the data mutation of others."
 			},
 			"response": []
