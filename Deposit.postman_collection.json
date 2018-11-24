@@ -118,7 +118,7 @@
 						{
 							"key": "Mutation",
 							"value": "",
-							"description": "Length is 1-13 {double,money,required}",
+							"description": "Length is 1-20 {double,money,required}",
 							"type": "text"
 						}
 					]
@@ -169,7 +169,7 @@
 						{
 							"key": "Mutation",
 							"value": "",
-							"description": "Length is 1-13 {double,money,required}",
+							"description": "Length is 1-20 {double,money,required}",
 							"type": "text"
 						}
 					]
@@ -208,7 +208,7 @@
 						{
 							"key": "Mutation",
 							"value": "",
-							"description": "Length is 1-13 {double,money,required}",
+							"description": "Length is 1-20 {double,money,required}",
 							"type": "text"
 						}
 					]
@@ -265,7 +265,7 @@
 						{
 							"key": "Mutation",
 							"value": "",
-							"description": "Length is 1-13 {double,money,required}",
+							"description": "Length is 1-20 {double,money,required}",
 							"type": "text"
 						}
 					]

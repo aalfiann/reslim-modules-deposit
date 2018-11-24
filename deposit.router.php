@@ -80,7 +80,7 @@ use \classes\JSON as JSON;                                      //JSON class    
         $body->write($deposit->transaction());
         return classes\Cors::modify($response,$body,200);
     })->add(new ValidateParam('Task','2-2','required'))
-        ->add(new ValidateParam('Mutation','1-13','double'))
+        ->add(new ValidateParam('Mutation','1-20','double'))
         ->add(new ValidateParam(['Token','Description'],'1-250','required'))
         ->add(new ValidateParam(['Username','DepositID','ReferenceID'],'1-50','required'));
 
@@ -100,7 +100,7 @@ use \classes\JSON as JSON;                                      //JSON class    
         $body = $response->getBody();
         $body->write($deposit->transaction());
         return classes\Cors::modify($response,$body,200);
-    })->add(new ValidateParam('Mutation','1-13','double'))
+    })->add(new ValidateParam('Mutation','1-20','double'))
         ->add(new ValidateParam(['Token','Description'],'1-250','required'))
         ->add(new ValidateParam(['Username','DepositID','ReferenceID'],'1-50','required'));
 
@@ -120,7 +120,7 @@ use \classes\JSON as JSON;                                      //JSON class    
         $body = $response->getBody();
         $body->write($deposit->transaction());
         return classes\Cors::modify($response,$body,200);
-    })->add(new ValidateParam('Mutation','1-13','double'))
+    })->add(new ValidateParam('Mutation','1-20','double'))
         ->add(new ValidateParam(['Token','Description'],'1-250','required'))
         ->add(new ValidateParam(['Username','DepositID','ReferenceID'],'1-50','required'));
 
@@ -140,7 +140,7 @@ use \classes\JSON as JSON;                                      //JSON class    
         $body = $response->getBody();
         $body->write($deposit->transaction());
         return classes\Cors::modify($response,$body,200);
-    })->add(new ValidateParam('Mutation','1-13','double'))
+    })->add(new ValidateParam('Mutation','1-20','double'))
         ->add(new ValidateParam('Token','1-250','required'))
         ->add(new ValidateParam(['Username','DepositID'],'1-50','required'));
 
