@@ -120,7 +120,7 @@ use PDO;                                            //To connect with database
                                 'code' => 'RS104',
                                 'message' => CustomHandlers::getreSlimMessage('RS104',$this->lang)
                             ];	
-                            Auth::deleteCacheAll('deposit-*',30);
+                            Auth::deleteCacheAll('exists-deposit-acc.cache',30);//
                         } else {
                             $data = [
                                 'status' => 'error',
@@ -163,7 +163,8 @@ use PDO;                                            //To connect with database
         private function isAccountExist(){
             $r = false;
             $newdepid = strtolower($this->depid);
-            if (Auth::isKeyCached('deposit-'.$newdepid.'-exists',86400)){
+            $keycache = $newdepid.'-exists-deposit-acc';
+            if (Auth::isKeyCached($keycache,86400)){
                 $r = true;
             } else {
                 $sql = "SELECT a.DepositID
@@ -174,7 +175,7 @@ use PDO;                                            //To connect with database
 		    	if ($stmt->execute()) {	
                 	if ($stmt->rowCount() > 0){
                         $r = true;
-                        Auth::writeCache('deposit-'.$newdepid.'-exists',null,86400);
+                        Auth::writeCache($keycache,null,86400);
         	        }          	   	
 	    		}
             }	 		
